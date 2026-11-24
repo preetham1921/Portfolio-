@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preetham N — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #111111;
+      --accent: #E5A93C;
+      --text: #2B2B2B;
+      --muted: #666666;
+      --border: #E5E5E5;
+      --bg: #FAFAFA;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      padding: 30px 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .resume-sheet {
+      width: 100%;
+      max-width: 820px;
+      background: #FFFFFF;
+      padding: 44px 50px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .resume-header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .candidate-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    .candidate-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+    }
+
+    .contact-info {
+      text-align: right;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .contact-info a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .resume-section {
+      margin-bottom: 22px;
+    }
+
+    .section-heading {
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-heading::before {
+      content: '';
+      width: 4px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .objective-text {
+      font-size: 0.92rem;
+      color: #333333;
+      line-height: 1.65;
+    }
+
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .skills-table td {
+      padding: 6px 0;
+      vertical-align: top;
+    }
+
+    .skills-table td.skill-category {
+      width: 28%;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .skills-table td.skill-values {
+      color: #444444;
+    }
+
+    .project-item, .edu-item, .cert-item {
+      margin-bottom: 14px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .item-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .item-meta {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .bullet-list {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 0.88rem;
+      color: #444444;
+      line-height: 1.55;
+    }
+
+    .bullet-list li {
+      margin-bottom: 4px;
+    }
+
+    .print-btn-bar {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    .btn-print {
+      background: var(--primary);
+      color: #FFFFFF;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-print:hover {
+      background: #333;
+    }
+
+    @media print {
+      body {
+        background: #FFFFFF;
+        padding: 0;
+      }
+      .resume-sheet {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .print-btn-bar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div style="width: 100%; max-width: 820px;">
+    
+    <div class="print-btn-bar">
+      <button class="btn-print" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        Print / Save PDF
+      </button>
+    </div>
+
+    <main class="resume-sheet">
+      <!-- Header -->
+      <header class="resume-header">
+        <div>
+          <h1 class="candidate-name">PREETHAM N</h1>
+          <p class="candidate-title">Software Engineering Student • Full-Stack Python & Database Architect</p>
+        </div>
+        <div class="contact-info">
+          <div>Email: <a href="mailto:pp6777032@gmail.com">pp6777032@gmail.com</a></div>
+          <div>Phone: <a href="tel:8197623197">+91 8197623197</a></div>
+          <div>Bengaluru, Karnataka, India</div>
+        </div>
+      </header>
+
+      <!-- Career Objective -->
+      <section class="resume-section">
+        <h2 class="section-heading">Career Objective</h2>
+        <p class="objective-text">
+          Detail-oriented and motivated Software Engineering student with a strong foundation in Database Management Systems and Full-Stack Python Development. Certified by <strong>Oracle, Cisco, and Red Hat</strong>, seeking a challenging Software Engineering Intern role to apply problem-solving skills, database expertise, and application development knowledge in a real-world environment.
+        </p>
+      </section>
+
+      <!-- Technical Skills -->
+      <section class="resume-section">
+        <h2 class="section-heading">Technical Skills</h2>
+        <table class="skills-table">
+          <tr>
+            <td class="skill-category">Programming Languages</td>
+            <td class="skill-values">Python 3 (Advanced), SQL (MySQL)</td>
+          </tr>
+          <tr>
+            <td class="skill-category">Databases</td>
+            <td class="skill-values">Oracle Database 23ai, MySQL (Schema Design, Primary & Foreign Keys, Complex Joins)</td>
+          </tr>
+          <tr>
+            <td class="skill-category">Frameworks & Tools</td>
+            <td class="skill-values">Tkinter (GUI Development), Red Hat Enterprise Linux (RHEL), Git/GitHub</td>
+          </tr>
+          <tr>
+            <td class="skill-category">Core Competencies</td>
+            <td class="skill-values">Algorithmic Thinking, Data Modeling & Database Design, Debugging, Testing & Refactoring</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Project Experience -->
+      <section class="resume-section">
+        <h2 class="section-heading">Project Experience</h2>
+        <div class="project-item">
+          <div class="item-header">
+            <span class="item-title">FITTTRACK – Smart Fitness Goal Planner</span>
+            <span class="item-meta">Tori ProjectStreet College Initiative</span>
+          </div>
+          <div style="font-size: 0.82rem; font-weight: 600; color: #555; margin-bottom: 6px;">Role: Core Developer · "Database Devils" Team</div>
+          <ul class="bullet-list">
+            <li>Designed and implemented a relational MySQL database schema to manage fitness goals, personalized workout plans, and user performance progress efficiently.</li>
+            <li>Developed Python-based backend logic using MET (Metabolic Equivalent of Task) values to dynamically calculate calorie burn and customized fitness targets.</li>
+            <li>Built an interactive desktop application using Tkinter with real-time feedback on goal feasibility and visual milestone tracking.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Professional Certifications -->
+      <section class="resume-section">
+        <h2 class="section-heading">Professional Certifications &amp; Credentials</h2>
+        <div class="cert-item">
+          <ul class="bullet-list">
+            <li><strong>Red Hat Application Development I: Java EE (AD183 - RHA) Ver. 7.0</strong> – Red Hat Global Learning Services (32 Credit Hours, Credly Badge: cfcaf188-3a62-4886-b605-39fac95ea663, April 2026)</li>
+            <li><strong>Oracle Academy Java Fundamentals</strong> – Oracle Academy &amp; NCET (Instructor Naveen Kumar Balupala, Award of Completion, April 2026)</li>
+            <li><strong>NPTEL Online Certification: Computer Networks &amp; Internet Protocol</strong> – IIT Kharagpur &amp; MoE Govt. of India (12-Week Course, Roll No: NPTEL26CS35S650206630, 4 Academic Credits, Jan–Apr 2026)</li>
+            <li><strong>CodeChef Pro Certificate of Completion</strong> – CodeChef (500 Difficulty Rating Problems Solved, User: quasi_rats_63, Cert ID: d93b6bd, April 2026)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="resume-section">
+        <h2 class="section-heading">Education</h2>
+        <div class="edu-item">
+          <div class="item-header">
+            <span class="item-title">Nagarjuna College of Engineering & Technology (NCET)</span>
+            <span class="item-meta">Bengaluru, Karnataka</span>
+          </div>
+          <p style="font-size: 0.88rem; color: #444;">Bachelor of Engineering (Software / Computer Science – Pursuing)</p>
+        </div>
+      </section>
+
+      <!-- Additional Information -->
+      <section class="resume-section">
+        <h2 class="section-heading">Additional Information</h2>
+        <ul class="bullet-list">
+          <li>Strong interest in backend engineering, scalable architecture, and database-driven applications.</li>
+          <li>Quick learner with proven ability to master emerging tools and frameworks.</li>
+          <li>Collaborative team player experienced in fast-paced academic and hackathon environments.</li>
+        </ul>
+      </section>
+    </main>
+
+  </div>
+</body>
+</html>
+

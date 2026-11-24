@@ -1,0 +1,12 @@
+# Scratch and temp files
+scratch_*
+test_*
+comp_*
+orig_*
+suit_raw*
+suit_crop*
+suit_aligned*
+suit_neck*
+photo1_exact_face_seamless.jpg
+photo1_exact_face_suit.jpg
+remote_*
