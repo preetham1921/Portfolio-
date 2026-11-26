@@ -1,5 +1,5 @@
 /**
- * Sanjay Shekar - Vertical Split Portfolio Interactive Script
+ * Preetham N - Vertical Split Portfolio Interactive Script
  * - Dual-Split Layout Switcher (Sidebar Left <-> Right)
  * - Academics, Academies & Career Roadmap Filter & Progress
  * - Section ScrollSpy Navigation
@@ -88,12 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.remove('layout-sidebar-left');
       document.body.classList.add('layout-sidebar-right');
       if (layoutStateLabel) layoutStateLabel.textContent = 'Sidebar Right';
-      localStorage.setItem('sanjay-portfolio-layout', 'right');
+      localStorage.setItem('preetham-portfolio-layout', 'right');
     } else {
       document.body.classList.remove('layout-sidebar-right');
       document.body.classList.add('layout-sidebar-left');
       if (layoutStateLabel) layoutStateLabel.textContent = 'Sidebar Left';
-      localStorage.setItem('sanjay-portfolio-layout', 'left');
+      localStorage.setItem('preetham-portfolio-layout', 'left');
     }
   }
 
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Check saved preference or default to left
-  const savedLayout = localStorage.getItem('sanjay-portfolio-layout');
+  const savedLayout = localStorage.getItem('preetham-portfolio-layout');
   if (savedLayout === 'right') {
     setLayoutMode('right');
   } else {
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.style.background = '#10b981';
         submitBtn.style.color = '#ffffff';
 
-        showToast(`Thank you, ${senderName}! Your message has been sent to Sanjay Shekar.`);
+        showToast(`Thank you, ${senderName}! Your message has been sent to Preetham N.`);
         contactForm.reset();
 
         setTimeout(() => {

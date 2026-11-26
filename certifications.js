@@ -1,6 +1,6 @@
 /**
  * ==========================================================
- * SANJAY SHEKAR - THE ULTIMATE COLLECTIONS CERTIFICATIONS
+ * PREETHAM N - THE ULTIMATE COLLECTIONS CERTIFICATIONS
  * Pinterest Curved Fan Showcase & Spread Grid Dynamic Motion
  * ==========================================================
  */
