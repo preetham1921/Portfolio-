@@ -1,1151 +1,1318 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <title>Preetham N | Software Engineer & Database Architect • Portfolio</title>
-  <meta name="description"
-    content="Portfolio of Preetham N — AI & Machine Learning Engineer, LLM Developer, and Algorithmic Problem Solver.">
+  <title>Preetham N | Vertical AI & ML Portfolio</title>
+  <meta name="description" content="Vertical split portfolio of Preetham N — AI & Machine Learning Engineer, LLM Developer, and Algorithmic Problem Solver with dual sidebar-content orientation.">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
-
-<body class="dark-theme" data-theme="obsidian">
+<body class="layout-sidebar-left">
 
   <!-- ==========================================================
-       TOP FLOATING NAVIGATION BAR (Teacher Reference Match)
+       TOP UTILITY HEADER BAR
        ========================================================== -->
-  <header class="header-nav" role="banner">
-    <!-- Left Pill Navigation Container -->
-    <nav class="nav-pill-wrapper" aria-label="Main Navigation">
-      <!-- Active Home Link -->
-      <a href="#home" class="nav-link active" data-tooltip="Home">
-        <svg class="home-icon-svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+  <header class="top-utility-bar" role="banner">
+    <!-- Brand Tag -->
+    <a href="#hero" class="brand-badge">
+      <span class="brand-monogram">PN</span>
+      <span class="brand-text">Preetham N</span>
+      <span class="brand-status-dot" title="Available for Opportunities"></span>
+    </a>
+
+    <!-- Top Action Controls -->
+    <div class="top-controls-group">
+      <!-- Layout Orientation Switcher (Sidebar Left <-> Right) -->
+      <button class="control-pill-btn" id="layoutFlipBtn" title="Toggle Layout: Sidebar Left / Right" aria-label="Toggle Layout Orientation">
+        <svg class="icon-swap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
         </svg>
-        <span>Home</span>
+        <span class="btn-text">Layout: <strong id="layoutStateLabel">Sidebar Left</strong></span>
+      </button>
+
+      <!-- Resume PDF Button -->
+      <a href="resume.html" class="control-pill-btn gold-accent trigger-resume-modal" title="View Curriculum Vitae">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="12" y1="18" x2="12" y2="12"></line>
+          <line x1="9" y1="15" x2="15" y2="15"></line>
+        </svg>
+        <span class="btn-text">Resume PDF</span>
       </a>
 
-      <!-- Journey / Education Icon -->
-      <a href="#journey" class="nav-link icon-only" data-tooltip="Journey & Education">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round">
-          <circle cx="18" cy="5" r="3"></circle>
-          <circle cx="6" cy="12" r="3"></circle>
-          <circle cx="18" cy="19" r="3"></circle>
-          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-        </svg>
-      </a>
-
-      <!-- About / Vision Icon -->
-      <a href="#about" class="nav-link icon-only" data-tooltip="About & Philosophy">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-          <circle cx="12" cy="12" r="3"></circle>
-        </svg>
-      </a>
-
-      <!-- Skills Icon -->
-      <a href="#skills" class="nav-link icon-only" data-tooltip="Technical Skills">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round">
-          <polygon
-            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-          </polygon>
-        </svg>
-      </a>
-
-      <!-- Projects Icon -->
-      <a href="#projects" class="nav-link icon-only" data-tooltip="Featured Projects">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round">
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-          <line x1="8" y1="21" x2="16" y2="21"></line>
-          <line x1="12" y1="17" x2="12" y2="21"></line>
-        </svg>
-      </a>
-
-      <!-- Certifications / Honors Icon -->
-      <a href="#certifications" class="nav-link icon-only" data-tooltip="Certifications">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round">
-          <circle cx="12" cy="8" r="7"></circle>
-          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-        </svg>
-      </a>
-
-      <!-- Download Profile Icon -->
-      <a href="#resume-modal" class="nav-link icon-only trigger-resume-modal" data-tooltip="Download Profile PDF">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-          <polyline points="7 10 12 15 17 10"></polyline>
-          <line x1="12" y1="15" x2="12" y2="3"></line>
-        </svg>
-      </a>
-
-      <!-- Contact Icon -->
-      <a href="#contact" class="nav-link icon-only" data-tooltip="Contact Me">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round">
-          <line x1="22" y1="2" x2="11" y2="13"></line>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-        </svg>
-      </a>
-    </nav>
-
-    <!-- Top Right 4-Dots Circular Button -->
-    <div class="nav-right-cluster">
-      <!-- Multi-Theme Palette Selector -->
-      <div class="theme-dropdown-container">
-        <button class="theme-toggle-btn" id="themeDropdownBtn" aria-label="Select Theme Palette" data-tooltip="Theme Palette">
-          <svg class="palette-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
-            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
-            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
-            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
-            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 9.5 10c.93 0 1.5-.64 1.5-1.42 0-.37-.14-.7-.38-.96-.23-.26-.37-.59-.37-.96 0-.78.67-1.42 1.5-1.42H16c3.31 0 6-2.69 6-6 0-4.97-4.48-9.24-10-9.24z"></path>
-          </svg>
-        </button>
-
-        <!-- Floating Theme Selector Modal/Dropdown -->
-        <div class="theme-dropdown-menu" id="themeDropdownMenu">
-          <div class="theme-menu-header">Select Theme Style</div>
-          <div class="theme-options-list">
-            <button class="theme-option-btn active" data-theme-val="obsidian">
-              <span class="theme-swatch swatch-obsidian"></span>
-              <span class="theme-option-name">Obsidian Gold</span>
-              <span class="theme-check-icon">✓</span>
-            </button>
-            <button class="theme-option-btn" data-theme-val="cyber">
-              <span class="theme-swatch swatch-cyber"></span>
-              <span class="theme-option-name">Cyber Midnight</span>
-              <span class="theme-check-icon">✓</span>
-            </button>
-            <button class="theme-option-btn" data-theme-val="emerald">
-              <span class="theme-swatch swatch-emerald"></span>
-              <span class="theme-option-name">Emerald Luxury</span>
-              <span class="theme-check-icon">✓</span>
-            </button>
-            <button class="theme-option-btn" data-theme-val="amethyst">
-              <span class="theme-swatch swatch-amethyst"></span>
-              <span class="theme-option-name">Royal Amethyst</span>
-              <span class="theme-check-icon">✓</span>
-            </button>
-            <button class="theme-option-btn" data-theme-val="light">
-              <span class="theme-swatch swatch-light"></span>
-              <span class="theme-option-name">Editorial Light</span>
-              <span class="theme-check-icon">✓</span>
-            </button>
-          </div>
+      <!-- 4-Dots Mobile / Quick Menu Button -->
+      <button class="menu-btn-circle" id="menuToggle" aria-label="Open Navigation Drawer">
+        <div class="dots-grid">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-      </div>
-
-      <!-- Top Right 4-Dots Circular Button -->
-      <button class="menu-btn-circle" id="menuToggle" aria-label="Toggle Quick Navigation Menu">
-      <div class="dots-grid">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
       </button>
     </div>
   </header>
 
   <!-- ==========================================================
-       HERO SECTION (Matching Teacher Reference)
+       GIANT FAINT BACKGROUND WATERMARK
        ========================================================== -->
-  <section class="hero-section" id="home">
-    <!-- Giant Serif Faint Background Watermark -->
-    <div class="hero-watermark" aria-hidden="true">
-      Preetham N
-    </div>
+  <div class="background-watermark" aria-hidden="true" id="bgWatermark">
+    Preetham N
+  </div>
 
-    <!-- Main Hero Body Grid -->
-    <div class="hero-body">
-      <!-- Left Column: Typography, Socials, CTA, Quote -->
-      <div class="hero-left">
-        <h1 class="hero-name">Preetham N</h1>
-        <p class="hero-subtitle">SOFTWARE ENGINEERING STUDENT • FULL-STACK PYTHON & DATABASE ARCHITECT</p>
+  <!-- ==========================================================
+       SPLIT VERTICAL CONTAINER
+       Supports .layout-sidebar-left (default) and .layout-sidebar-right
+       ========================================================== -->
+  <div class="split-portfolio-container" id="portfolioContainer">
 
-        <!-- Social Icons Row -->
-        <div class="hero-socials-row">
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/sanjay-shekar-06bb1837a/" target="_blank" rel="noopener noreferrer"
-            class="social-icon-btn" title="LinkedIn Profile">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-            </svg>
+    <!-- ========================================================
+         COLUMN A: STICKY TIME & PROFILE SIDEBAR
+         (Left or Right depending on layout mode)
+         ======================================================== -->
+    <aside class="sticky-time-sidebar" id="timeSidebar" aria-label="Profile and Navigation Sidebar">
+      <div class="sidebar-inner-card">
+
+        <!-- Sanjay Portrait Cutout (1254 x 1254 px, 1:1 Square) -->
+        <div class="sidebar-portrait-frame">
+          <div class="portrait-halo"></div>
+          <img src="photo_preetham_executive_tie.jpg" width="1254" height="1254" alt="Preetham N Portrait - 1254x1254" class="sidebar-portrait-img">
+        </div>
+
+        <!-- Identity Block -->
+        <div class="sidebar-identity">
+          <div class="sidebar-status-chip">
+            <span class="avail-dot"></span>
+            <span>Available for Opportunities</span>
+          </div>
+          <h1 class="sidebar-name">Preetham N</h1>
+          <p class="sidebar-role">B.E. SOFTWARE & COMPUTER SCIENCE</p>
+          <p class="sidebar-tagline">Software Engineer • Full-Stack Python • Problem Solver</p>
+        </div>
+
+        <!-- Social & Professional Platforms -->
+        <div class="sidebar-socials">
+          <a href="https://www.linkedin.com/in/sanjay-shekar-06bb1837a/" target="_blank" rel="noopener noreferrer" class="social-chip" title="LinkedIn Profile">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span>LinkedIn</span>
           </a>
 
-          <!-- GitHub -->
-          <a href="https://github.com/preetham1921" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
-            title="GitHub Profile">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-            </svg>
+          <a href="https://github.com/preetham1921" target="_blank" rel="noopener noreferrer" class="social-chip" title="GitHub Repositories">
+            <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <span>GitHub</span>
           </a>
 
-          <!-- LeetCode -->
-          <a href="https://leetcode.com/u/sanjay139/" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
-            title="LeetCode (200+ Solved)">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .666-1.793L9.4 7.625l4.98-5.344a1.382 1.382 0 0 0-.897-2.281zm3.874 10.963a1.38 1.38 0 0 0-.977.404l-3.79 3.79a1.38 1.38 0 1 0 1.952 1.952l3.79-3.79a1.38 1.38 0 0 0-.975-2.356z" />
-            </svg>
+          <a href="https://leetcode.com/u/sanjay139/" target="_blank" rel="noopener noreferrer" class="social-chip" title="LeetCode (200+ Solved)">
+            <svg viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .666-1.793L9.4 7.625l4.98-5.344a1.382 1.382 0 0 0-.897-2.281zm3.874 10.963a1.38 1.38 0 0 0-.977.404l-3.79 3.79a1.38 1.38 0 1 0 1.952 1.952l3.79-3.79a1.38 1.38 0 0 0-.975-2.356z"/></svg>
+            <span>LeetCode</span>
           </a>
 
-          <!-- HackerRank -->
-          <a href="https://www.hackerrank.com/profile/sanjayshekar139" target="_blank" rel="noopener noreferrer"
-            class="social-icon-btn" title="HackerRank Profile">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2.072 17.5v-11h1.748v4.321h4.648v-4.321h1.748v11h-1.748v-5.071h-4.648v5.071h-1.748z" />
-            </svg>
-          </a>
-
-          <!-- CodeChef -->
-          <a href="https://www.codechef.com/users/quasi_rats_63" target="_blank" rel="noopener noreferrer"
-            class="social-icon-btn" title="CodeChef Profile">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-            </svg>
-          </a>
-
-          <!-- Oracle Academy Certified Tag (Matching reference) -->
-          <a href="#certifications" class="oracle-brand-badge"
-            title="Oracle Academy: Applied Database Systems 23ai Certified">
+          <a href="#certifications" class="oracle-pill" title="Oracle Certified">
             <span class="oracle-dot"></span>
-            <span>ORACLE</span>
+            <span>ORACLE 23ai</span>
           </a>
         </div>
 
-        <!-- Download Profile CTA Button -->
-        <a href="resume.html" class="cta-download-btn trigger-resume-modal" id="downloadProfileBtn">
-          <span class="btn-icon-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-          </span>
-          <span>Download Profile</span>
-          <span class="pdf-tag-pill">PDF</span>
-        </a>
-
-        <!-- Quote Block -->
-        <div class="hero-quote-block">
-          <span class="quote-mark">“</span>
-          <p class="quote-text">
-            Detail-oriented and motivated Software Engineering student with a strong foundation in Database Management
-            Systems and Full-Stack Python Development. Certified by Oracle, Cisco, and Red Hat, dedicated to
-            architecting high-performance enterprise applications. ”
-          </p>
-        </div>
-      </div>
-
-      <!-- Right Column: Preetham N Cutout Portrait -->
-      <div class="hero-right">
-        <div class="portrait-backdrop-glow"></div>
-        <div class="portrait-wrapper">
-          <img src="photo_preetham_executive_tie.jpg" onerror="this.onerror=null; this.src='photo_preetham_navy_clean.jpg';"
-            alt="Preetham N - Executive Portrait with Tie" class="portrait-img" id="mainHeroPortrait">
-          <div class="photo-switcher-floating"
-            style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; background: rgba(17,17,17,0.85); backdrop-filter: blur(10px); padding: 5px 10px; border-radius: 9999px; z-index: 25; box-shadow: 0 4px 14px rgba(0,0,0,0.25);">
-            <button type="button" class="portrait-switch-btn active" data-img="photo_preetham_executive_tie.jpg"
-              style="border: none; background: #fff; color: #111; padding: 4px 10px; border-radius: 9999px; font-size: 0.72rem; font-weight: 700; cursor: pointer;">Executive
-              Tie</button>
-            <button type="button" class="portrait-switch-btn" data-img="photo_preetham_navy_clean.jpg"
-              style="border: none; background: transparent; color: #bbb; padding: 4px 10px; border-radius: 9999px; font-size: 0.72rem; font-weight: 700; cursor: pointer;">Navy
-              Suit</button>
-            <button type="button" class="portrait-switch-btn" data-img="photo3_smiling_suit.jpg"
-              style="border: none; background: transparent; color: #bbb; padding: 4px 10px; border-radius: 9999px; font-size: 0.72rem; font-weight: 700; cursor: pointer;">Smiling</button>
-            <button type="button" class="portrait-switch-btn" data-img="photo1_original.jpg"
-              style="border: none; background: transparent; color: #bbb; padding: 4px 10px; border-radius: 9999px; font-size: 0.72rem; font-weight: 700; cursor: pointer;">Original</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ==========================================================
-         BOTTOM STATS BAR (Exact Match to Teacher Reference)
-         ========================================================== -->
-    <div class="bottom-stats-banner">
-      <!-- Left Solid Black Lead Block -->
-      <div class="stats-banner-lead">
-        <div class="stats-lead-tag">
-          <span class="stats-lead-dash"></span>
-          <span>B.E. SOFTWARE / CS • NCET BENGALURU</span>
-        </div>
-        <div class="stats-lead-title">Impact at a glance</div>
-      </div>
-
-      <!-- Metrics Group Overlaid Across Frosted Glass -->
-      <div class="stats-metrics-group">
-        <!-- Metric 1: LeetCode Problems -->
-        <div class="stat-item">
-          <div class="stat-accent-bar"></div>
-          <div class="stat-content">
-            <div class="stat-number" data-target="3" data-suffix="+">3+</div>
-            <div class="stat-label">Global Certifications (Oracle, Red Hat, Cisco)</div>
-          </div>
-        </div>
-
-        <!-- Metric 2: Academic CGPA -->
-        <div class="stat-item">
-          <div class="stat-accent-bar"></div>
-          <div class="stat-content">
-            <div class="stat-number" data-target="100" data-suffix="%">Python & SQL</div>
-            <div class="stat-label">Advanced Backend & Database Engineering</div>
-          </div>
-        </div>
-
-        <!-- Metric 3: Flagship Projects Deployed -->
-        <div class="stat-item">
-          <div class="stat-accent-bar"></div>
-          <div class="stat-content">
-            <div class="stat-number" data-target="1" data-suffix="">FITTTRACK</div>
-            <div class="stat-label">Smart Fitness Planner (Database Devils Lead)</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================
-       SECTION 2: JOURNEY & EDUCATION (Exact Reference Vertical Timeline)
-       ========================================================== -->
-  <section id="journey" class="section-container" style="background: #FFFFFF; padding: 70px 24px;">
-    <div class="section-header" style="max-width: 760px; margin: 0 auto 50px auto; text-align: center;">
-      <div class="section-eyebrow">
-        <span class="dash"></span>
-        <span>Academic &amp; Career Journey</span>
-      </div>
-      <h2 class="section-title">Education &amp; Milestones</h2>
-      <p class="section-description">
-        A chronological roadmap of engineering education, globally verified industry certifications, and key development milestones.
-      </p>
-    </div>
-
-    <!-- Exact Reference Vertical Timeline -->
-    <div class="ref-timeline-wrapper">
-      
-      <!-- Milestone 1: B.E. Degree (Active - Blue Solid + Checkmark) -->
-      <div class="ref-timeline-item active-done">
-        <div class="ref-timeline-spine-segment spine-active"></div>
-        <div class="ref-timeline-node node-solid-blue">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-        </div>
-        <div class="ref-timeline-content">
-          <div class="ref-timeline-date">2024 – 2028 (Present) • In Progress</div>
-          <h3 class="ref-timeline-title">Bachelor of Engineering (B.E.) — Software &amp; Computer Science</h3>
-          <p class="ref-timeline-desc">Nagarjuna College of Engineering &amp; Technology (NCET), Bengaluru • CGPA 8.6/10 • Specializing in Data Structures, Relational DBMS, and Algorithmic Design.</p>
-        </div>
-      </div>
-
-      <!-- Milestone 2: Oracle Academy Java Fundamentals (Purple Ring + Clock) -->
-      <div class="ref-timeline-item in-progress">
-        <div class="ref-timeline-spine-segment spine-pending"></div>
-        <div class="ref-timeline-node node-ring-purple">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-        </div>
-        <div class="ref-timeline-content">
-          <div class="ref-timeline-date">April 27, 2026 • Verified Award</div>
-          <h3 class="ref-timeline-title">Oracle Academy — Java Fundamentals</h3>
-          <p class="ref-timeline-desc">Instructor Naveen Kumar Balupala • Satisfactory completion of all advanced coursework in Object-Oriented Programming (OOP) paradigms, polymorphic architectures, and core Java libraries.</p>
-        </div>
-      </div>
-
-      <!-- Milestone 3: Red Hat Application Development I: Java EE (Slate Ring + Clock) -->
-      <div class="ref-timeline-item pending">
-        <div class="ref-timeline-spine-segment spine-pending"></div>
-        <div class="ref-timeline-node node-ring-slate">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-        </div>
-        <div class="ref-timeline-content">
-          <div class="ref-timeline-date">April 21, 2026 • 32 Credit Hours</div>
-          <h3 class="ref-timeline-title">Red Hat Certified — Application Development I: Java EE (AD183)</h3>
-          <p class="ref-timeline-desc">Red Hat Global Learning Services • Enterprise Java EE, EJB, CDI, and RESTful web service architectures on Red Hat JBoss EAP • Credly ID cfcaf188-3a62-4886-b605-39fac95ea663.</p>
-        </div>
-      </div>
-
-      <!-- Milestone 4: NPTEL IIT Kharagpur Computer Networks (Slate Ring + Clock) -->
-      <div class="ref-timeline-item pending">
-        <div class="ref-timeline-spine-segment spine-pending"></div>
-        <div class="ref-timeline-node node-ring-slate">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-        </div>
-        <div class="ref-timeline-content">
-          <div class="ref-timeline-date">Jan – Apr 2026 • National 12-Week Course</div>
-          <h3 class="ref-timeline-title">NPTEL Certification — Computer Networks &amp; Internet Protocol</h3>
-          <p class="ref-timeline-desc">IIT Kharagpur &amp; MoE Govt. of India • Prof. Haimanti Banerji • Roll No NPTEL26CS35S650206630 • 4 Academic Credits recommended • Score: 52% (Certified among 10,927 candidates).</p>
-        </div>
-      </div>
-
-      <!-- Milestone 5: CodeChef 500 Difficulty (Slate Ring + Clock) -->
-      <div class="ref-timeline-item pending">
-        <div class="ref-timeline-spine-segment spine-pending"></div>
-        <div class="ref-timeline-node node-ring-slate">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-        </div>
-        <div class="ref-timeline-content">
-          <div class="ref-timeline-date">April 14, 2026 • Pro Certification</div>
-          <h3 class="ref-timeline-title">CodeChef Pro Certificate — 500 Difficulty Rating Problems</h3>
-          <p class="ref-timeline-desc">CodeChef • User quasi_rats_63 • Certificate ID d93b6bd • Solved all practice problems of 500 difficulty rating, demonstrating foundational data structures and algorithm speed.</p>
-        </div>
-      </div>
-
-      <!-- Milestone 6: Flagship Project Lead -->
-      <div class="ref-timeline-item last-item">
-        <div class="ref-timeline-node node-ring-slate">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-        </div>
-        <div class="ref-timeline-content">
-          <div class="ref-timeline-date">2025 • Core Lead Project</div>
-          <h3 class="ref-timeline-title">FITTTRACK — Smart Fitness Goal Planner</h3>
-          <p class="ref-timeline-desc">Database Devils Team • Tori ProjectStreet • Architected normalized MySQL database schemas with foreign key cascading and built Python computation engine with Tkinter GUI.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================
-       SECTION 3: TECHNICAL SKILLS MATRIX
-       ========================================================== -->
-  <section id="skills" class="section-container"
-    style="background: var(--bg-canvas-alt); border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05);">
-    <div class="section-header">
-      <div class="section-eyebrow">
-        <span class="dash"></span>
-        <span>Capabilities</span>
-      </div>
-      <h2 class="section-title">Technical Expertise</h2>
-      <p class="section-description">
-        Comprehensive command of programming languages, modern GenAI frameworks, relational databases, and core computer
-        science fundamentals.
-      </p>
-    </div>
-
-    <div class="skills-grid">
-      <!-- 1. Programming Languages -->
-      <div class="skill-category-box">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="16 18 22 12 16 6"></polyline>
-              <polyline points="8 6 2 12 8 18"></polyline>
-            </svg>
-          </div>
-          <h3 class="skill-cat-title">Programming Languages</h3>
-        </div>
-        <div class="skill-tags-cloud">
-          <span class="skill-tag highlight">Python</span>
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">C++</span>
-          <span class="skill-tag">C</span>
-          <span class="skill-tag highlight">SQL</span>
-          <span class="skill-tag">JavaScript</span>
-        </div>
-      </div>
-
-      <!-- 2. GenAI & Modern Tools -->
-      <div class="skill-category-box">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
-          </div>
-          <h3 class="skill-cat-title">GenAI & Tooling</h3>
-        </div>
-        <div class="skill-tags-cloud">
-          <span class="skill-tag highlight">LangChain</span>
-          <span class="skill-tag highlight">Groq API</span>
-          <span class="skill-tag">Streamlit</span>
-          <span class="skill-tag">Prompt Engineering</span>
-          <span class="skill-tag">Git & GitHub</span>
-          <span class="skill-tag">Linux (RHEL)</span>
-          <span class="skill-tag">VS Code</span>
-        </div>
-      </div>
-
-      <!-- 3. Databases & Data Modeling -->
-      <div class="skill-category-box">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-            </svg>
-          </div>
-          <h3 class="skill-cat-title">Databases & Architecture</h3>
-        </div>
-        <div class="skill-tags-cloud">
-          <span class="skill-tag highlight">MySQL</span>
-          <span class="skill-tag highlight">Oracle 23ai</span>
-          <span class="skill-tag">MySQL Workbench</span>
-          <span class="skill-tag highlight">Normalization (3NF)</span>
-          <span class="skill-tag">Query Optimization</span>
-          <span class="skill-tag">Indexing</span>
-        </div>
-      </div>
-
-      <!-- 4. Core Computer Science -->
-      <div class="skill-category-box">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-              <rect x="9" y="9" width="6" height="6"></rect>
-              <line x1="9" y1="1" x2="9" y2="4"></line>
-              <line x1="15" y1="1" x2="15" y2="4"></line>
-              <line x1="9" y1="20" x2="9" y2="23"></line>
-              <line x1="15" y1="20" x2="15" y2="23"></line>
-              <line x1="20" y1="9" x2="23" y2="9"></line>
-              <line x1="20" y1="14" x2="23" y2="14"></line>
-              <line x1="1" y1="9" x2="4" y2="9"></line>
-              <line x1="1" y1="14" x2="4" y2="14"></line>
-            </svg>
-          </div>
-          <h3 class="skill-cat-title">Core Computer Science</h3>
-        </div>
-        <div class="skill-tags-cloud">
-          <span class="skill-tag highlight">Data Structures & Algorithms</span>
-          <span class="skill-tag">Object-Oriented Programming (OOP)</span>
-          <span class="skill-tag">DBMS</span>
-          <span class="skill-tag">Operating Systems</span>
-          <span class="skill-tag">Computer Networks</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================
-       SECTION 4: FEATURED PROJECTS
-       ========================================================== -->
-  <section id="projects" class="section-container">
-    <div class="section-header">
-      <div class="section-eyebrow">
-        <span class="dash"></span>
-        <span>Selected Work</span>
-      </div>
-      <h2 class="section-title">Engineered Projects</h2>
-      <p class="section-description">
-        Demonstrated projects spanning Large Language Models, database performance optimization, multi-user systems, and
-        core OOP principles.
-      </p>
-    </div>
-
-    <div class="projects-grid">
-      <!-- Project 1: AI Placement Coach -->
-      <div class="project-card">
-        <div class="project-card-header">
-          <div>
-            <div class="project-category-tag">Generative AI • LLM Chatbot</div>
-            <h3 class="project-card-title">AI Placement Coach</h3>
-          </div>
-          <a href="https://github.com/preetham1921" target="_blank" rel="noopener noreferrer" class="project-link-btn"
-            title="View Source on GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-        </div>
-        <div class="project-card-body">
-          <ul class="project-bullets">
-            <li>Engineered an intelligent career and placement mentoring bot utilizing LangChain's ChatGroq integration
-              and the high-speed <code>openai/gpt-oss-120b</code> LLM model.</li>
-            <li>Constructed an interactive Streamlit frontend with full session-state memory preservation, enabling
-              seamless contextual multi-turn candidate interviews.</li>
-            <li>Maintained enterprise-grade environment security via <code>python-dotenv</code> for zero-leakage API
-              token hygiene.</li>
+        <!-- Vertical Navigation Links -->
+        <nav class="sidebar-vertical-nav" aria-label="Section Navigation">
+          <div class="nav-section-title">SECTIONS</div>
+          <ul class="vertical-nav-list">
+            <li>
+              <a href="#hero" class="v-nav-item active" data-target="hero">
+                <span class="nav-dot"></span>
+                <span class="nav-label">Overview</span>
+                <span class="nav-number">01</span>
+              </a>
+            </li>
+            <li>
+              <a href="#career-roadmap" class="v-nav-item" data-target="career-roadmap">
+                <span class="nav-dot"></span>
+                <span class="nav-label">Academies & Roadmap</span>
+                <span class="nav-number">02</span>
+              </a>
+            </li>
+            <li>
+              <a href="#timeline-journey" class="v-nav-item" data-target="timeline-journey">
+                <span class="nav-dot"></span>
+                <span class="nav-label">Timeline & Education</span>
+                <span class="nav-number">03</span>
+              </a>
+            </li>
+            <li>
+              <a href="#skills" class="v-nav-item" data-target="skills">
+                <span class="nav-dot"></span>
+                <span class="nav-label">Technical Matrix</span>
+                <span class="nav-number">04</span>
+              </a>
+            </li>
+            <li>
+              <a href="#projects" class="v-nav-item" data-target="projects">
+                <span class="nav-dot"></span>
+                <span class="nav-label">Featured Projects</span>
+                <span class="nav-number">05</span>
+              </a>
+            </li>
+            <li>
+              <a href="#problem-solving" class="v-nav-item" data-target="problem-solving">
+                <span class="nav-dot"></span>
+                <span class="nav-label">Problem Solving</span>
+                <span class="nav-number">06</span>
+              </a>
+            </li>
+            <li>
+              <a href="#certifications" class="v-nav-item" data-target="certifications">
+                <span class="nav-dot"></span>
+                <span class="nav-label">Certifications</span>
+                <span class="nav-number">07</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact" class="v-nav-item" data-target="contact">
+                <span class="nav-dot"></span>
+                <span class="nav-label">Get In Touch</span>
+                <span class="nav-number">08</span>
+              </a>
+            </li>
           </ul>
-        </div>
-        <div class="project-tech-stack">
-          <span class="tech-pill">Python</span>
-          <span class="tech-pill">LangChain</span>
-          <span class="tech-pill">Groq API</span>
-          <span class="tech-pill">Streamlit</span>
-          <span class="tech-pill">python-dotenv</span>
-        </div>
-      </div>
+        </nav>
 
-      <!-- Project 2: FITTTTRACK -->
-      <div class="project-card">
-        <div class="project-card-header">
-          <div>
-            <div class="project-category-tag">Lead Backend & Database • Analytics</div>
-            <h3 class="project-card-title">FITTTTRACK</h3>
-          </div>
-          <a href="https://github.com/preetham1921" target="_blank" rel="noopener noreferrer" class="project-link-btn"
-            title="View Source on GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
+        <!-- CTA Download Button -->
+        <div class="sidebar-cta-wrap">
+          <a href="resume.html" class="sidebar-cta-btn trigger-resume-modal">
+            <span class="cta-circle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </span>
+            <span class="cta-text">Download Profile</span>
+            <span class="cta-badge">PDF</span>
           </a>
         </div>
-        <div class="project-card-body">
-          <ul class="project-bullets">
-            <li>Built a smart multi-user fitness goal planner with interactive progress analytics and accurate MET-based
-              calorie consumption mathematical modeling.</li>
-            <li>Architected a strictly normalized 3NF MySQL relational database schema with declarative foreign key
-              cascading constraints and transaction integrity.</li>
-            <li>Strategically indexed primary query pathways, achieving a measurable <strong>30% acceleration</strong>
-              in data retrieval latency.</li>
-          </ul>
-        </div>
-        <div class="project-tech-stack">
-          <span class="tech-pill">Python</span>
-          <span class="tech-pill">MySQL</span>
-          <span class="tech-pill">Tkinter GUI</span>
-          <span class="tech-pill">3NF Normalization</span>
-          <span class="tech-pill">Query Tuning</span>
-        </div>
-      </div>
 
-      <!-- Project 3: Smart Expense Tracker -->
-      <div class="project-card">
-        <div class="project-card-header">
-          <div>
-            <div class="project-category-tag">Full-Stack System • Finance</div>
-            <h3 class="project-card-title">Smart Expense Tracker</h3>
+        <!-- Quick Contact Info -->
+        <div class="sidebar-footer-info">
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Bengaluru, Karnataka, India</span>
           </div>
-          <a href="https://github.com/preetham1921" target="_blank" rel="noopener noreferrer" class="project-link-btn"
-            title="View Source on GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-        </div>
-        <div class="project-card-body">
-          <ul class="project-bullets">
-            <li>Designed a relational financial management system handling categorized expense tracking, budget
-              thresholds, and spending velocity reports.</li>
-            <li>Engineered monthly spending aggregations and threshold alert triggers to notify users of overspending
-              anomalies.</li>
-            <li>Implemented polyglot backend components in Java and Python for transactional integrity and data
-              transformation pipelines.</li>
-          </ul>
-        </div>
-        <div class="project-tech-stack">
-          <span class="tech-pill">Java</span>
-          <span class="tech-pill">Python</span>
-          <span class="tech-pill">SQL</span>
-          <span class="tech-pill">Schema Architecture</span>
-        </div>
-      </div>
-
-      <!-- Project 4: MiniCalc -->
-      <div class="project-card">
-        <div class="project-card-header">
-          <div>
-            <div class="project-category-tag">Core Engineering • Object-Oriented</div>
-            <h3 class="project-card-title">MiniCalc Calculator</h3>
-          </div>
-          <a href="https://github.com/preetham1921" target="_blank" rel="noopener noreferrer" class="project-link-btn"
-            title="View Source on GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-        </div>
-        <div class="project-card-body">
-          <ul class="project-bullets">
-            <li>Developed a modular command-line expression calculator in Java with support for operator precedence
-              parsing and token evaluation.</li>
-            <li>Applied clean OOP encapsulation and custom inheritance structures with granular exception propagation
-              for edge cases and division by zero.</li>
-          </ul>
-        </div>
-        <div class="project-tech-stack">
-          <span class="tech-pill">Java</span>
-          <span class="tech-pill">OOP Design</span>
-          <span class="tech-pill">Exception Handling</span>
-          <span class="tech-pill">CLI Systems</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================
-       SECTION 5: PROBLEM SOLVING & COMPETITIVE CODING
-       ========================================================== -->
-  <section id="problem-solving" class="section-container"
-    style="background: var(--bg-canvas-alt); border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05);">
-    <div class="section-header">
-      <div class="section-eyebrow">
-        <span class="dash"></span>
-        <span>Algorithmic Rigor</span>
-      </div>
-      <h2 class="section-title">Problem Solving Showcase</h2>
-      <p class="section-description">
-        Demonstrated track record of analytical problem solving across top competitive programming platforms.
-      </p>
-    </div>
-
-    <div class="coding-showcase-card">
-      <div class="coding-left-hero">
-        <div class="coding-number-huge">3+</div>
-        <h3 class="coding-title-huge">LeetCode Problems Solved</h3>
-        <p style="color: #cccccc; line-height: 1.65; font-size: 0.95rem;">
-          Consistent algorithmic practice mastering optimal time & space complexities across standard and complex
-          interview patterns.
-        </p>
-        <div class="coding-platforms-row">
-          <a href="https://leetcode.com/u/sanjay139/" target="_blank" rel="noopener noreferrer" class="platform-badge">
-            <span style="color: var(--accent-gold);">●</span> LeetCode
-          </a>
-          <a href="https://www.hackerrank.com/profile/sanjayshekar139" target="_blank" rel="noopener noreferrer"
-            class="platform-badge">
-            <span style="color: var(--accent-gold);">●</span> HackerRank
-          </a>
-          <a href="https://www.codechef.com/users/quasi_rats_63" target="_blank" rel="noopener noreferrer"
-            class="platform-badge">
-            <span style="color: var(--accent-gold);">●</span> CodeChef
-          </a>
-        </div>
-      </div>
-
-      <div class="topics-grid">
-        <div class="topic-item">
-          <span class="topic-dot"></span>
-          <span>Arrays & Two Pointers</span>
-        </div>
-        <div class="topic-item">
-          <span class="topic-dot"></span>
-          <span>Strings & Sliding Window</span>
-        </div>
-        <div class="topic-item">
-          <span class="topic-dot"></span>
-          <span>Linked Lists & Pointers</span>
-        </div>
-        <div class="topic-item">
-          <span class="topic-dot"></span>
-          <span>Binary Trees & BSTs</span>
-        </div>
-        <div class="topic-item">
-          <span class="topic-dot"></span>
-          <span>Hashing & Hash Maps</span>
-        </div>
-        <div class="topic-item">
-          <span class="topic-dot"></span>
-          <span>Recursion & Backtracking</span>
-        </div>
-        <div class="topic-item">
-          <span class="topic-dot"></span>
-          <span>Dynamic Programming</span>
-        </div>
-        <div class="topic-item">
-          <span class="topic-dot"></span>
-          <span>Binary Search Algorithms</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-  <!-- ==========================================================
-       SECTION 6: CERTIFICATIONS & CREDENTIALS
-       ========================================================== -->
-  <section id="certifications" class="section-container">
-    <div class="section-header" style="position: relative;">
-      <div class="section-eyebrow">
-        <span class="dash"></span>
-        <span>Verified Credentials</span>
-      </div>
-      <h2 class="section-title">Certifications &amp; Honors</h2>
-      <p class="section-description">
-        Authentic industry-recognized certifications validating enterprise application development, network protocols, core Java, and competitive problem solving.
-      </p>
-      <div style="margin-top: 18px;">
-        <a href="certifications.html" class="cta-download-btn" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; font-size: 0.85rem; text-decoration: none; border-radius: 9999px;">
-          <span>Explore Interactive 3D Deck Experience</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
-        </a>
-      </div>
-    </div>
-
-    <div class="certs-grid">
-      <!-- Cert 1: Red Hat -->
-      <div class="cert-card-luxury">
-        <div class="cert-card-top">
-          <div class="cert-brand-badge redhat-badge">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
-            </svg>
-            <span>RED HAT</span>
-          </div>
-          <span class="cert-date-pill">April 21, 2026</span>
-        </div>
-        <div class="cert-body">
-          <h3 class="cert-title-lux">Red Hat Application Development I: Java EE</h3>
-          <div class="cert-course-code">(AD183 - RHA) Ver. 7.0 &bull; 32 Credit Hours</div>
-          <p class="cert-desc-lux">
-            Comprehensive enterprise Java EE training covering Enterprise JavaBeans (EJB), Contexts and Dependency Injection (CDI), and JAX-RS RESTful web services on Red Hat JBoss EAP.
-          </p>
-          <div class="cert-meta-row">
-            <span class="meta-tag">32 Credit Hours</span>
-            <span class="meta-tag">Java EE &amp; JBoss</span>
-            <span class="meta-tag">Credly Verified</span>
-          </div>
-        </div>
-        <div class="cert-card-footer">
-          <a href="assets/certifications/cert_redhat.jpg" target="_blank" rel="noopener noreferrer" class="cert-pdf-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-            <span>View Certificate</span>
-          </a>
-          <a href="https://www.credly.com/badges/cfcaf188-3a62-4886-b605-39fac95ea663" target="_blank" rel="noopener noreferrer" class="cert-verify-link">
-            Verify Badge ↗
-          </a>
-        </div>
-      </div>
-
-      <!-- Cert 2: Oracle Academy -->
-      <div class="cert-card-luxury">
-        <div class="cert-card-top">
-          <div class="cert-brand-badge oracle-badge">
-            <span class="oracle-badge-dot"></span>
-            <span>ORACLE ACADEMY</span>
-          </div>
-          <span class="cert-date-pill">April 27, 2026</span>
-        </div>
-        <div class="cert-body">
-          <h3 class="cert-title-lux">Java Fundamentals &ndash; Award of Completion</h3>
-          <div class="cert-course-code">Instructor Naveen Kumar Balupala &bull; NCET Bengaluru</div>
-          <p class="cert-desc-lux">
-            Mastered Object-Oriented Programming (OOP) paradigms, polymorphic hierarchies, exception architectures, and core Java structures in partnership with Nagarjuna College of Engineering &amp; Technology.
-          </p>
-          <div class="cert-meta-row">
-            <span class="meta-tag">Java Core</span>
-            <span class="meta-tag">OOP Architecture</span>
-            <span class="meta-tag">Oracle Academy</span>
-          </div>
-        </div>
-        <div class="cert-card-footer">
-          <a href="assets/certifications/cert_oracle.jpg" target="_blank" rel="noopener noreferrer" class="cert-pdf-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-            <span>View Certificate</span>
-          </a>
-          <span class="cert-verify-link" style="color:var(--text-muted);font-size:0.78rem;">Instructor: N. K. Balupala</span>
-        </div>
-      </div>
-
-      <!-- Cert 3: NPTEL IIT Kharagpur -->
-      <div class="cert-card-luxury">
-        <div class="cert-card-top">
-          <div class="cert-brand-badge nptel-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
-            <span>NPTEL &bull; IIT KGP</span>
-          </div>
-          <span class="cert-date-pill">Jan &ndash; Apr 2026</span>
-        </div>
-        <div class="cert-body">
-          <h3 class="cert-title-lux">Computer Networks &amp; Internet Protocol</h3>
-          <div class="cert-course-code">Prof. Haimanti Banerji &bull; Roll No: NPTEL26CS35S650206630</div>
-          <p class="cert-desc-lux">
-            12-week comprehensive national certification by IIT Kharagpur (Funded by MoE, Govt. of India). Mastered TCP/IP protocol suite, subnetting, routing protocols, flow control, and network architecture.
-          </p>
-          <div class="cert-meta-row">
-            <span class="meta-tag">Score: 52%</span>
-            <span class="meta-tag">4 Credits</span>
-            <span class="meta-tag">10,927 Certified</span>
-          </div>
-        </div>
-        <div class="cert-card-footer">
-          <a href="assets/certifications/cert_nptel.jpg" target="_blank" rel="noopener noreferrer" class="cert-pdf-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-            <span>View Certificate</span>
-          </a>
-          <span class="cert-verify-link" style="color:var(--text-muted);font-size:0.78rem;">MoE Govt. of India</span>
-        </div>
-      </div>
-
-      <!-- Cert 4: CodeChef Pro -->
-      <div class="cert-card-luxury">
-        <div class="cert-card-top">
-          <div class="cert-brand-badge codechef-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
-              <polyline points="16 18 22 12 16 6"></polyline>
-              <polyline points="8 6 2 12 8 18"></polyline>
-            </svg>
-            <span>CODECHEF PRO</span>
-          </div>
-          <span class="cert-date-pill">April 14, 2026</span>
-        </div>
-        <div class="cert-body">
-          <h3 class="cert-title-lux">Pro Certificate of Completion &mdash; 500 Difficulty</h3>
-          <div class="cert-course-code">Handle: quasi_rats_63 &bull; Cert ID: d93b6bd</div>
-          <p class="cert-desc-lux">
-            Successfully solved all practice problems across the 500 difficulty rating on CodeChef, demonstrating strong mastery of data structures, basic algorithmic design, and edge case evaluation.
-          </p>
-          <div class="cert-meta-row">
-            <span class="meta-tag">CodeChef Certified</span>
-            <span class="meta-tag">quasi_rats_63</span>
-            <span class="meta-tag">500 Rating</span>
-          </div>
-        </div>
-        <div class="cert-card-footer">
-          <a href="assets/certifications/cert_codechef.jpg" target="_blank" rel="noopener noreferrer" class="cert-pdf-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-            <span>View Certificate</span>
-          </a>
-          <a href="https://www.codechef.com/certificates/verify" target="_blank" rel="noopener noreferrer" class="cert-verify-link" title="Verify on CodeChef (ID: d93b6bd)">
-            Verify ID: d93b6bd ↗
-          </a>
-        </div>
-      </div>
-
-      <!-- Cert 5: Cisco Networking Academy -->
-      <div class="cert-card-luxury">
-        <div class="cert-card-top">
-          <div class="cert-brand-badge cisco-badge">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
-            </svg>
-            <span>CISCO NETACAD</span>
-          </div>
-          <span class="cert-date-pill">September 4, 2025</span>
-        </div>
-        <div class="cert-body">
-          <h3 class="cert-title-lux">C Essentials 1 &mdash; Cisco Networking Academy</h3>
-          <div class="cert-course-code">Instructor: Bhangava R &bull; NCET, Bengaluru</div>
-          <p class="cert-desc-lux">
-            Completed C Essentials 1 through the Cisco Networking Academy program offered by Nagarjuna College of Engineering and Technology. Covered C programming fundamentals including syntax, memory management, pointers, structures and file I/O.
-          </p>
-          <div class="cert-meta-row">
-            <span class="meta-tag">C Programming</span>
-            <span class="meta-tag">Memory Management</span>
-            <span class="meta-tag">Cisco NetAcad</span>
-          </div>
-        </div>
-        <div class="cert-card-footer">
-          <a href="assets/certifications/cert_cisco.jpg" target="_blank" rel="noopener noreferrer" class="cert-pdf-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <circle cx="8.5" cy="8.5" r="1.5"></circle>
-              <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-            <span>View Certificate</span>
-          </a>
-          <span class="cert-verify-link" style="color:var(--accent-gold,#F5A623);font-size:0.78rem;">NCET &middot; Cisco NetAcad Verified &#10003;</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================
-       SECTION 7: CONTACT & CONNECT
-       ========================================================== -->
-  <section id="contact" class="section-container">
-    <div class="contact-grid">
-      <!-- Contact Info -->
-      <div class="contact-info-col">
-        <div class="section-eyebrow">
-          <span class="dash"></span>
-          <span>Get In Touch</span>
-        </div>
-        <h3>Let's collaborate on engineering the future.</h3>
-        <p>
-          I am actively seeking software engineering internships, AI research opportunities, and ambitious technical
-          collaborations. Drop me a note!
-        </p>
-
-        <!-- Location -->
-        <div class="contact-detail-row">
-          <div class="contact-icon-bubble">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-          </div>
-          <div class="contact-detail-text">
-            <span>Location</span>
-            <strong>Bengaluru, Karnataka, India</strong>
-          </div>
-        </div>
-
-        <!-- Phone -->
-        <div class="contact-detail-row">
-          <div class="contact-icon-bubble">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-              </path>
-            </svg>
-          </div>
-          <div class="contact-detail-text">
-            <span>Call / WhatsApp</span>
-            <a href="tel:+918197623197">+91 8197623197</a>
-          </div>
-        </div>
-
-        <!-- Email -->
-        <div class="contact-detail-row">
-          <div class="contact-icon-bubble">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-          </div>
-          <div class="contact-detail-text">
-            <span>Email</span>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             <a href="mailto:pp6777032@gmail.com">pp6777032@gmail.com</a>
           </div>
         </div>
+
       </div>
+    </aside>
 
-      <!-- Contact Form -->
-      <form class="contact-form" id="contactForm">
-        <div class="form-group">
-          <label for="formName">Your Name</label>
-          <input type="text" id="formName" class="form-input" placeholder="e.g. Alex Johnson" required>
+    <!-- ========================================================
+         COLUMN B: VERTICAL SCROLLABLE CONTENT STREAM
+         ======================================================== -->
+    <main class="vertical-content-stream" id="mainContent" role="main">
+
+      <!-- ======================================================
+           1. HERO WELCOME SECTION
+           ====================================================== -->
+      <section class="content-section hero-overview-section" id="hero">
+        <div class="hero-quote-card">
+          <div class="quote-symbol">“</div>
+          <blockquote class="editorial-quote">
+            Driven by curiosity, continuous learning, and a commitment to building clean, reliable software that solves real-world challenges.
+          </blockquote>
+          <div class="quote-signature">
+            <span class="sig-line"></span>
+            <span class="sig-name">Preetham N</span>
+            <span class="sig-role">B.E. AI & ML • Bengaluru, India</span>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="formEmail">Your Email</label>
-          <input type="email" id="formEmail" class="form-input" placeholder="alex@company.com" required>
+
+        <!-- Impact at a glance (Horizontal banner adapted into vertical flow) -->
+        <div class="vertical-impact-banner">
+          <div class="impact-lead-box">
+            <div class="lead-dash-row">
+              <span class="lead-dash"></span>
+              <span class="lead-year">2024 – 2028</span>
+            </div>
+            <h3 class="lead-heading">Impact at a glance</h3>
+            <p class="lead-sub">Demonstrated engineering excellence across academics, algorithmic code, and deployed software.</p>
+          </div>
+
+          <div class="impact-stats-grid">
+            <div class="stat-card">
+              <div class="stat-gold-bar"></div>
+              <div class="stat-card-body">
+                <div class="stat-big-number" data-target="200" data-suffix="+">200+</div>
+                <div class="stat-title">LeetCode Solved</div>
+                <div class="stat-detail">Optimal Time & Space Patterns</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-gold-bar"></div>
+              <div class="stat-card-body">
+                <div class="stat-big-number" data-target="8.6" data-suffix="">8.6</div>
+                <div class="stat-title">Engineering CGPA</div>
+                <div class="stat-detail">Nagarjuna College of Engineering</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-gold-bar"></div>
+              <div class="stat-card-body">
+                <div class="stat-big-number" data-target="4" data-suffix="+">4+</div>
+                <div class="stat-title">Flagship Projects</div>
+                <div class="stat-detail">GenAI, 3NF Databases & Systems</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="formMessage">Message / Project Inquiry</label>
-          <textarea id="formMessage" class="form-textarea"
-            placeholder="Hello Sanjay, I came across your portfolio and would love to discuss..." required></textarea>
+      </section>
+
+      <!-- ======================================================
+           2. ACADEMICS, ACADEMIES & CAREER ROADMAP
+           ("Follow the path & completed milestone ticks")
+           ====================================================== -->
+      <section class="content-section" id="career-roadmap">
+        <div class="section-title-wrap">
+          <div class="eyebrow-tag">
+            <span class="gold-dash"></span>
+            <span>FOLLOW THE PATH</span>
+          </div>
+          <h2 class="section-heading">Academics, Academies & Career Roadmap</h2>
+          <p class="section-subtext">
+            A structured learning and career roadmap following each academic stage, technical academy, and engineering milestone along the path — ticked off as each step is completed.
+          </p>
         </div>
-        <button type="submit" class="form-submit-btn">
-          <span>Send Message</span>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <line x1="22" y1="2" x2="11" y2="13"></line>
-            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-          </svg>
-        </button>
-      </form>
-    </div>
-  </section>
 
-  <!-- ==========================================================
-       SITE FOOTER
-       ========================================================== -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-copy">
-        © 2026 <strong>Preetham N</strong>. Designed & Crafted with modern precision.
-      </div>
-      <a href="#home" class="footer-top-btn">
-        <span>Back to top</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
-      </a>
-    </div>
-  </footer>
+        <!-- Roadmap Progress & Category Filter Bar -->
+        <div class="roadmap-control-panel">
+          <div class="roadmap-progress-wrap">
+            <div class="progress-stats-row">
+              <div class="progress-title-group">
+                <span class="progress-icon-mini">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                  </svg>
+                </span>
+                <span class="progress-label">Roadmap Progress</span>
+              </div>
+              <span class="progress-counter-badge" id="roadmapCounterBadge">
+                <strong>6 / 9</strong> Completed • 1 In Progress
+              </span>
+            </div>
+            <div class="roadmap-progress-bar-bg" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">
+              <div class="roadmap-progress-bar-fill" style="width: 67%;"></div>
+            </div>
+            <div class="roadmap-legend">
+              <span class="legend-item"><span class="legend-dot completed"></span> Completed (✓)</span>
+              <span class="legend-item"><span class="legend-dot active"></span> In Progress</span>
+              <span class="legend-item"><span class="legend-dot upcoming"></span> Next Career Goal</span>
+            </div>
+          </div>
 
-  <!-- ==========================================================
-       SLIDE-OUT QUICK MENU DRAWER (Triggered by 4-dots button)
-       ========================================================== -->
-  <div class="drawer-backdrop" id="drawerBackdrop"></div>
-  <aside class="side-drawer" id="sideDrawer" aria-label="Quick Navigation">
-    <div>
-      <div class="drawer-top-bar">
-        <div style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700;">
-          Preetham N
+          <div class="roadmap-filter-tabs" role="tablist" aria-label="Filter Roadmap Milestones">
+            <button class="roadmap-tab active" data-filter="all" role="tab" aria-selected="true">All Path (9)</button>
+            <button class="roadmap-tab" data-filter="academic" role="tab" aria-selected="false">Academics (2)</button>
+            <button class="roadmap-tab" data-filter="academy" role="tab" aria-selected="false">Academies (4)</button>
+            <button class="roadmap-tab" data-filter="career" role="tab" aria-selected="false">Career Journey (3)</button>
+          </div>
         </div>
-        <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
 
-      <ul class="drawer-nav-list">
-        <li class="drawer-nav-item"><a href="#home">Home <span>→</span></a></li>
-        <li class="drawer-nav-item"><a href="#journey">Education <span>→</span></a></li>
-        <li class="drawer-nav-item"><a href="#skills">Skills <span>→</span></a></li>
-        <li class="drawer-nav-item"><a href="#projects">Projects <span>→</span></a></li>
-        <li class="drawer-nav-item"><a href="#problem-solving">Coding <span>→</span></a></li>
-        <li class="drawer-nav-item"><a href="#certifications">Certifications <span>→</span></a></li>
-        <li class="drawer-nav-item"><a href="#contact">Contact <span>→</span></a></li>
-      </ul>
-    </div>
+        <!-- Follow-the-Path Winding Roadmap Track -->
+        <div class="roadmap-follow-track" id="roadmapTrack">
 
-    <div>
-      <a href="resume.html" class="cta-download-btn trigger-resume-modal"
-        style="width: 100%; justify-content: center; margin-bottom: 20px;">
-        <span class="btn-icon-circle">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-          </svg>
-        </span>
-        <span>View Resume PDF</span>
-      </a>
-      <div style="font-size: 0.85rem; color: #777; text-align: center;">
-        Bengaluru, India • CGPA 8.6
-      </div>
-    </div>
-  </aside>
+          <!-- Step 1: Academic Foundation (Completed) -->
+          <article class="roadmap-step completed" data-category="academic">
+            <div class="roadmap-connector">
+              <div class="roadmap-node-badge completed" title="Completed Milestone">
+                <svg class="node-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="path-line solid-gold">
+                <span class="path-flow-arrow">↓</span>
+              </div>
+            </div>
+
+            <div class="roadmap-card">
+              <div class="roadmap-card-top">
+                <div class="step-tags">
+                  <span class="step-num">STEP 01</span>
+                  <span class="cat-pill academic">Academic Foundation</span>
+                </div>
+                <span class="completion-pill done">✓ Completed</span>
+              </div>
+              <h3 class="roadmap-title">Pre-University & High School Foundation</h3>
+              <div class="roadmap-org">Pre-Engineering Science & Mathematics Track • Karnataka</div>
+              <p class="roadmap-desc">
+                Built core analytical reasoning in Mathematics, Physics, and foundational computing logic before entering undergraduate engineering.
+              </p>
+              <div class="roadmap-skills-row">
+                <span class="mini-skill">Mathematics</span>
+                <span class="mini-skill">Analytical Reasoning</span>
+                <span class="mini-skill">CS Basics</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Step 2: B.E. AI & ML (Active / In Progress) -->
+          <article class="roadmap-step active-stage" data-category="academic">
+            <div class="roadmap-connector">
+              <div class="roadmap-node-badge active" title="Currently In Progress">
+                <svg class="node-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+                <span class="node-active-pulse" aria-label="In Progress"></span>
+              </div>
+              <div class="path-line solid-gold">
+                <span class="path-flow-arrow">↓</span>
+              </div>
+            </div>
+
+            <div class="roadmap-card active-card">
+              <div class="roadmap-card-top">
+                <div class="step-tags">
+                  <span class="step-num">STEP 02</span>
+                  <span class="cat-pill academic">Academic Degree • 2024–2028</span>
+                </div>
+                <span class="completion-pill active-pill">● In Progress • 8.6 CGPA</span>
+              </div>
+              <h3 class="roadmap-title">B.E. in Software & Computer Science</h3>
+              <div class="roadmap-org">Nagarjuna College of Engineering and Technology (NCET), Bengaluru</div>
+              <p class="roadmap-desc">
+                Pursuing undergraduate engineering with an <strong>8.6 / 10 CGPA</strong>, mastering Data Structures & Algorithms, Machine Learning, DBMS, Operating Systems, and Computer Networks.
+              </p>
+              <div class="roadmap-skills-row">
+                <span class="mini-skill gold">8.6 / 10 CGPA</span>
+                <span class="mini-skill">DSA & OOP</span>
+                <span class="mini-skill">DBMS</span>
+                <span class="mini-skill">AI & ML</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Step 3: Red Hat Academy (Completed) -->
+          <article class="roadmap-step completed" data-category="academy">
+            <div class="roadmap-connector">
+              <div class="roadmap-node-badge completed" title="Completed Milestone">
+                <svg class="node-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="path-line solid-gold">
+                <span class="path-flow-arrow">↓</span>
+              </div>
+            </div>
+
+            <div class="roadmap-card">
+              <div class="roadmap-card-top">
+                <div class="step-tags">
+                  <span class="step-num">STEP 03</span>
+                  <span class="cat-pill academy">Technical Academy</span>
+                </div>
+                <span class="completion-pill done">✓ Completed</span>
+              </div>
+              <h3 class="roadmap-title">Red Hat Academy — Python Programming (AD141)</h3>
+              <div class="roadmap-org">Red Hat Academy • Enterprise Linux (RHEL)</div>
+              <p class="roadmap-desc">
+                Completed enterprise Python programming and system automation scripting inside Red Hat Enterprise Linux (RHEL) environments.
+              </p>
+              <div class="roadmap-skills-row">
+                <span class="mini-skill">Python AD141</span>
+                <span class="mini-skill">Linux (RHEL)</span>
+                <span class="mini-skill">Automation</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Step 4: Cisco Networking Academy (Completed) -->
+          <article class="roadmap-step completed" data-category="academy">
+            <div class="roadmap-connector">
+              <div class="roadmap-node-badge completed" title="Completed Milestone">
+                <svg class="node-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="path-line solid-gold">
+                <span class="path-flow-arrow">↓</span>
+              </div>
+            </div>
+
+            <div class="roadmap-card">
+              <div class="roadmap-card-top">
+                <div class="step-tags">
+                  <span class="step-num">STEP 04</span>
+                  <span class="cat-pill academy">Technical Academy</span>
+                </div>
+                <span class="completion-pill done">✓ Completed</span>
+              </div>
+              <h3 class="roadmap-title">Cisco Networking Academy — Python Essentials</h3>
+              <div class="roadmap-org">Cisco Networking Academy</div>
+              <p class="roadmap-desc">
+                Mastered Python core syntax, modular algorithms, functional data pipelines, and object-oriented software patterns.
+              </p>
+              <div class="roadmap-skills-row">
+                <span class="mini-skill">Python Essentials</span>
+                <span class="mini-skill">Data Processing</span>
+                <span class="mini-skill">OOP Patterns</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Step 5: NPTEL Computer Networks (Completed) -->
+          <article class="roadmap-step completed" data-category="academy">
+            <div class="roadmap-connector">
+              <div class="roadmap-node-badge completed" title="Completed Milestone">
+                <svg class="node-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="path-line solid-gold">
+                <span class="path-flow-arrow">↓</span>
+              </div>
+            </div>
+
+            <div class="roadmap-card">
+              <div class="roadmap-card-top">
+                <div class="step-tags">
+                  <span class="step-num">STEP 05</span>
+                  <span class="cat-pill academy">National Academy • NPTEL</span>
+                </div>
+                <span class="completion-pill done">✓ Completed</span>
+              </div>
+              <h3 class="roadmap-title">NPTEL — Computer Networks (Passed)</h3>
+              <div class="roadmap-org">NPTEL • Ministry of Education, Govt of India</div>
+              <p class="roadmap-desc">
+                Passed national proctored coursework covering TCP/IP protocol layers, socket communication, routing algorithms, and packet architecture.
+              </p>
+              <div class="roadmap-skills-row">
+                <span class="mini-skill">TCP/IP</span>
+                <span class="mini-skill">Routing Algorithms</span>
+                <span class="mini-skill">Network Security</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Step 6: Oracle Academy (Completed) -->
+          <article class="roadmap-step completed" data-category="academy">
+            <div class="roadmap-connector">
+              <div class="roadmap-node-badge completed" title="Completed Milestone">
+                <svg class="node-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="path-line solid-gold">
+                <span class="path-flow-arrow">↓</span>
+              </div>
+            </div>
+
+            <div class="roadmap-card">
+              <div class="roadmap-card-top">
+                <div class="step-tags">
+                  <span class="step-num">STEP 06</span>
+                  <span class="cat-pill academy">Oracle Academy</span>
+                </div>
+                <span class="completion-pill done">✓ Completed</span>
+              </div>
+              <h3 class="roadmap-title">Oracle Academy — Applied Database Systems 23ai</h3>
+              <div class="roadmap-org">Oracle Academy</div>
+              <p class="roadmap-desc">
+                Certified in enterprise relational modeling, 3NF normalization, SQL query optimization, indexing, and AI Vector Search capabilities in Oracle 23ai.
+              </p>
+              <div class="roadmap-skills-row">
+                <span class="mini-skill gold">Oracle 23ai</span>
+                <span class="mini-skill">3NF Schemas</span>
+                <span class="mini-skill">Query Tuning</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Step 7: Career Milestone — Applied Systems & 200+ DSA (Completed) -->
+          <article class="roadmap-step completed" data-category="career">
+            <div class="roadmap-connector">
+              <div class="roadmap-node-badge completed" title="Completed Milestone">
+                <svg class="node-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="path-line dashed-future">
+                <span class="path-flow-arrow">↓</span>
+              </div>
+            </div>
+
+            <div class="roadmap-card">
+              <div class="roadmap-card-top">
+                <div class="step-tags">
+                  <span class="step-num">STEP 07</span>
+                  <span class="cat-pill career">Career Journey • 2024–Present</span>
+                </div>
+                <span class="completion-pill done">✓ Completed</span>
+              </div>
+              <h3 class="roadmap-title">LLM Systems, 3NF Backends & 200+ DSA Mastery</h3>
+              <div class="roadmap-org">Applied Engineering Portfolio • GitHub & LeetCode</div>
+              <p class="roadmap-desc">
+                Transitioned academy theory into deployed systems: built <strong>AI Placement Coach</strong> (LangChain + Groq), achieved a <strong>30% query speedup</strong> in <strong>FITTTTRACK</strong>, engineered <strong>Smart Expense Tracker</strong> & <strong>MiniCalc</strong>, and solved <strong>200+ LeetCode</strong> problems.
+              </p>
+              <div class="roadmap-skills-row">
+                <span class="mini-skill gold">LangChain & Groq</span>
+                <span class="mini-skill">200+ LeetCode</span>
+                <span class="mini-skill">4+ Flagship Builds</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Step 8: Career Journey — Engineering Internship (Upcoming) -->
+          <article class="roadmap-step upcoming" data-category="career">
+            <div class="roadmap-connector">
+              <div class="roadmap-node-badge upcoming" title="Next Milestone">
+                <svg class="node-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <div class="path-line dashed-future">
+                <span class="path-flow-arrow">↓</span>
+              </div>
+            </div>
+
+            <div class="roadmap-card upcoming-card">
+              <div class="roadmap-card-top">
+                <div class="step-tags">
+                  <span class="step-num">STEP 08</span>
+                  <span class="cat-pill career">Career Journey • 2026–2027 Target</span>
+                </div>
+                <span class="completion-pill next">○ Next Target</span>
+              </div>
+              <h3 class="roadmap-title">AI / ML & Backend Software Engineering Internship</h3>
+              <div class="roadmap-org">Production Engineering Teams • Bengaluru / Remote</div>
+              <p class="roadmap-desc">
+                Ready to contribute in fast-paced engineering teams by building scalable LLM workflows, reliable backend APIs, and optimized relational data pipelines.
+              </p>
+              <div class="roadmap-skills-row">
+                <span class="mini-skill">Production LLMs</span>
+                <span class="mini-skill">Backend Scale</span>
+                <span class="mini-skill">Team Collaboration</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Step 9: Career Journey — Graduation & AI Engineer (Future Horizon) -->
+          <article class="roadmap-step upcoming last-step" data-category="career">
+            <div class="roadmap-connector">
+              <div class="roadmap-node-badge upcoming" title="Future Horizon">
+                <svg class="node-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+            </div>
+
+            <div class="roadmap-card upcoming-card">
+              <div class="roadmap-card-top">
+                <div class="step-tags">
+                  <span class="step-num">STEP 09</span>
+                  <span class="cat-pill career">Career Horizon • 2028</span>
+                </div>
+                <span class="completion-pill next">○ Future Goal</span>
+              </div>
+              <h3 class="roadmap-title">B.E. Graduation & Full-Time AI Systems Engineer</h3>
+              <div class="roadmap-org">Class of 2028 • Software & AI Engineering</div>
+              <p class="roadmap-desc">
+                Graduate in Software & Computer Science and architect resilient, high-impact intelligent systems at scale.
+              </p>
+              <div class="roadmap-skills-row">
+                <span class="mini-skill">AI Architecture</span>
+                <span class="mini-skill">Distributed Systems</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ======================================================
+           3. VERTICAL TIMELINE: JOURNEY & EDUCATION
+           (Left Time / Right Content with Interactive Line)
+           ====================================================== -->
+      <section class="content-section" id="timeline-journey">
+        <div class="section-title-wrap">
+          <div class="eyebrow-tag">
+            <span class="gold-dash"></span>
+            <span>CHRONOLOGY & ACADEMICS</span>
+          </div>
+          <h2 class="section-heading">Journey & Education Timeline</h2>
+          <p class="section-subtext">
+            A chronological timeline bridging foundational computer science theory, advanced artificial intelligence research, and hands-on systems engineering.
+          </p>
+        </div>
+
+        <!-- The Vertical Timeline Component -->
+        <div class="vertical-timeline-container">
+          <div class="timeline-spine-line"></div>
+
+          <!-- Timeline Item 1: B.E. Degree (Present) -->
+          <article class="timeline-entry">
+            <!-- Left Side: Time Marker -->
+            <div class="timeline-time-col">
+              <span class="time-badge active-now">
+                <span class="live-dot-mini"></span>
+                2024 – 2028
+              </span>
+              <span class="time-sublabel">Undergraduate Study</span>
+              <span class="time-location">Bengaluru, India</span>
+            </div>
+
+            <!-- Middle: Timeline Node Dot -->
+            <div class="timeline-node-dot">
+              <div class="inner-dot"></div>
+            </div>
+
+            <!-- Right Side: Content Card -->
+            <div class="timeline-content-card highlight-border">
+              <div class="card-badge-row">
+                <span class="luxury-badge">★ Degree in Progress</span>
+                <span class="metric-pill">CGPA: 8.6 / 10</span>
+              </div>
+              <h3 class="entry-title">Bachelor of Engineering (B.E.) in Software & Computer Science</h3>
+              <div class="entry-org">Nagarjuna College of Engineering and Technology (NCET)</div>
+              <p class="entry-narrative">
+                Pursuing in-depth academic rigor in machine learning algorithms, probabilistic models, database architecture, and data structures. Maintaining an exceptional <strong>8.6/10 CGPA</strong> while actively architecting real-world applications.
+              </p>
+              <div class="entry-highlights">
+                <div class="highlight-item">
+                  <strong>Core Rigor:</strong> Machine Learning, Relational DBMS (3NF), Operating Systems, Computer Networks.
+                </div>
+                <div class="highlight-item">
+                  <strong>Leadership & Lab:</strong> Active participant in competitive programming clubs and technical symposiums.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Timeline Item 2: GenAI & LLM Specialization -->
+          <article class="timeline-entry">
+            <!-- Left Side: Time Marker -->
+            <div class="timeline-time-col">
+              <span class="time-badge">2024 – Present</span>
+              <span class="time-sublabel">GenAI & LLM Eng</span>
+              <span class="time-location">Open-Source</span>
+            </div>
+
+            <!-- Middle: Timeline Node Dot -->
+            <div class="timeline-node-dot">
+              <div class="inner-dot"></div>
+            </div>
+
+            <!-- Right Side: Content Card -->
+            <div class="timeline-content-card">
+              <div class="card-badge-row">
+                <span class="tech-badge">LangChain • Groq API</span>
+                <span class="status-pill">Deployed</span>
+              </div>
+              <h3 class="entry-title">LLM Agent Architecture & AI Placement Coach</h3>
+              <div class="entry-org">Independent Engineering Research</div>
+              <p class="entry-narrative">
+                Architected high-throughput AI career coaching systems integrating LangChain with ultra-low latency Groq API hardware inference and <code>openai/gpt-oss-120b</code>. Implemented conversational session state memory and strict environment token isolation.
+              </p>
+            </div>
+          </article>
+
+          <!-- Timeline Item 3: Relational Architecture & Optimization -->
+          <article class="timeline-entry">
+            <!-- Left Side: Time Marker -->
+            <div class="timeline-time-col">
+              <span class="time-badge">2024</span>
+              <span class="time-sublabel">Database Systems</span>
+              <span class="time-location">Oracle 23ai & MySQL</span>
+            </div>
+
+            <!-- Middle: Timeline Node Dot -->
+            <div class="timeline-node-dot">
+              <div class="inner-dot"></div>
+            </div>
+
+            <!-- Right Side: Content Card -->
+            <div class="timeline-content-card">
+              <div class="card-badge-row">
+                <span class="tech-badge">3NF Normalization • Query Optimization</span>
+                <span class="metric-pill">+30% Speedup</span>
+              </div>
+              <h3 class="entry-title">Lead Backend & Database Engineering — FITTTTRACK</h3>
+              <div class="entry-org">Analytical Fitness Planning Platform</div>
+              <p class="entry-narrative">
+                Spearheaded the relational database design for a multi-user fitness planner. Designed strictly normalized 3NF schemas with declarative foreign keys, indexing core query pathways to achieve a verified <strong>30% latency reduction</strong>.
+              </p>
+            </div>
+          </article>
+
+          <!-- Timeline Item 4: Algorithmic Mastery -->
+          <article class="timeline-entry">
+            <!-- Left Side: Time Marker -->
+            <div class="timeline-time-col">
+              <span class="time-badge">Continuous</span>
+              <span class="time-sublabel">Competitive Coding</span>
+              <span class="time-location">LeetCode & Platforms</span>
+            </div>
+
+            <!-- Middle: Timeline Node Dot -->
+            <div class="timeline-node-dot">
+              <div class="inner-dot"></div>
+            </div>
+
+            <!-- Right Side: Content Card -->
+            <div class="timeline-content-card">
+              <div class="card-badge-row">
+                <span class="luxury-badge">200+ Solved</span>
+                <span class="status-pill">Ranked</span>
+              </div>
+              <h3 class="entry-title">Algorithmic Rigor & Competitive Problem Solving</h3>
+              <div class="entry-org">LeetCode, HackerRank, CodeChef</div>
+              <p class="entry-narrative">
+                Disciplined daily practice solving algorithmic problems covering Trees, Dynamic Programming, Graph Traversals, Sliding Window, and Backtracking.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           3. TECHNICAL EXPERTISE MATRIX
+           ====================================================== -->
+      <section class="content-section" id="skills">
+        <div class="section-title-wrap">
+          <div class="eyebrow-tag">
+            <span class="gold-dash"></span>
+            <span>CAPABILITIES</span>
+          </div>
+          <h2 class="section-heading">Technical Expertise Matrix</h2>
+          <p class="section-subtext">
+            Hands-on command across programming languages, cutting-edge Generative AI tooling, enterprise database engineering, and core computer science fundamentals.
+          </p>
+        </div>
+
+        <div class="skills-matrix-grid">
+          <!-- Category 1 -->
+          <div class="skill-group-box">
+            <div class="group-header">
+              <div class="group-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <div>
+                <h3 class="group-title">Programming Languages</h3>
+                <span class="group-count">6 Core Languages</span>
+              </div>
+            </div>
+            <div class="skill-pills-wrap">
+              <span class="tech-tag primary">Python</span>
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">C</span>
+              <span class="tech-tag primary">SQL</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="skill-group-box">
+            <div class="group-header">
+              <div class="group-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </div>
+              <div>
+                <h3 class="group-title">GenAI & Modern Tools</h3>
+                <span class="group-count">LLMs & Tooling</span>
+              </div>
+            </div>
+            <div class="skill-pills-wrap">
+              <span class="tech-tag primary">LangChain</span>
+              <span class="tech-tag primary">Groq API</span>
+              <span class="tech-tag primary">Streamlit</span>
+              <span class="tech-tag">Prompt Engineering</span>
+              <span class="tech-tag">Git & GitHub</span>
+              <span class="tech-tag">Linux (RHEL)</span>
+              <span class="tech-tag">VS Code</span>
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="skill-group-box">
+            <div class="group-header">
+              <div class="group-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              </div>
+              <div>
+                <h3 class="group-title">Databases & Architecture</h3>
+                <span class="group-count">Relational & Vector</span>
+              </div>
+            </div>
+            <div class="skill-pills-wrap">
+              <span class="tech-tag primary">MySQL</span>
+              <span class="tech-tag primary">Oracle 23ai</span>
+              <span class="tech-tag primary">3NF Normalization</span>
+              <span class="tech-tag">Query Optimization</span>
+              <span class="tech-tag">Indexing</span>
+              <span class="tech-tag">MySQL Workbench</span>
+            </div>
+          </div>
+
+          <!-- Category 4 -->
+          <div class="skill-group-box">
+            <div class="group-header">
+              <div class="group-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+              </div>
+              <div>
+                <h3 class="group-title">Core Computer Science</h3>
+                <span class="group-count">Theoretical Foundations</span>
+              </div>
+            </div>
+            <div class="skill-pills-wrap">
+              <span class="tech-tag primary">Data Structures & Algorithms</span>
+              <span class="tech-tag">Object-Oriented Programming (OOP)</span>
+              <span class="tech-tag">DBMS Concepts</span>
+              <span class="tech-tag">Operating Systems</span>
+              <span class="tech-tag">Computer Networks</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           4. FEATURED ENGINEERED PROJECTS
+           ====================================================== -->
+      <section class="content-section" id="projects">
+        <div class="section-title-wrap">
+          <div class="eyebrow-tag">
+            <span class="gold-dash"></span>
+            <span>SYSTEMS & DEPLOYMENTS</span>
+          </div>
+          <h2 class="section-heading">Featured Engineered Projects</h2>
+          <p class="section-subtext">
+            Production-focused software projects spanning Large Language Models, database query optimization, financial management systems, and modular CLI architectures.
+          </p>
+        </div>
+
+        <div class="projects-list-vertical">
+
+          <!-- Project 1 -->
+          <article class="project-item-card">
+            <div class="project-top-row">
+              <div class="project-meta">
+                <span class="proj-badge-gold">FLAGSHIP GENAI</span>
+                <span class="proj-date">2024</span>
+              </div>
+              <a href="https://github.com/preetham1921" target="_blank" rel="noopener noreferrer" class="proj-source-link" title="View Source on GitHub">
+                <span>GitHub Source</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+
+            <h3 class="proj-title">AI Placement Coach — LLM Career Bot</h3>
+            <p class="proj-desc">
+              An intelligent, responsive placement mentor designed to conduct interactive candidate mock interviews, resume critique, and algorithmic guidance in real time.
+            </p>
+
+            <ul class="proj-bullet-list">
+              <li>Engineered with LangChain's <code>ChatGroq</code> connector coupled to the <code>openai/gpt-oss-120b</code> high-performance model for sub-second latency.</li>
+              <li>Constructed an interactive Streamlit frontend with full session-state memory preservation, enabling smooth multi-turn interview conversations.</li>
+              <li>Enforced zero-leakage security protocols with <code>python-dotenv</code> for secure token hydration.</li>
+            </ul>
+
+            <div class="proj-stack-row">
+              <span class="stack-chip">Python</span>
+              <span class="stack-chip">LangChain</span>
+              <span class="stack-chip">Groq API</span>
+              <span class="stack-chip">Streamlit</span>
+              <span class="stack-chip">Prompt Engineering</span>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-item-card">
+            <div class="project-top-row">
+              <div class="project-meta">
+                <span class="proj-badge-gold">LEAD BACKEND & DATABASE</span>
+                <span class="proj-date">2024</span>
+              </div>
+              <a href="https://github.com/preetham1921" target="_blank" rel="noopener noreferrer" class="proj-source-link" title="View Source on GitHub">
+                <span>GitHub Source</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+
+            <h3 class="proj-title">FITTTTRACK — Smart Fitness Goal Planner & Analytics</h3>
+            <p class="proj-desc">
+              A multi-user desktop fitness analytics tool for daily activity tracking, target goal setting, and caloric expenditure calculations.
+            </p>
+
+            <ul class="proj-bullet-list">
+              <li>Architected a strictly normalized 3NF MySQL relational database schema with declarative foreign key cascading and atomic transactions.</li>
+              <li>Engineered mathematical MET-based (Metabolic Equivalent of Task) expenditure formulas for scientific caloric accuracy.</li>
+              <li>Strategically applied composite B-tree indices on frequent query paths, yielding a verified <strong>30% acceleration</strong> in data retrieval times.</li>
+            </ul>
+
+            <div class="proj-stack-row">
+              <span class="stack-chip">Python</span>
+              <span class="stack-chip">MySQL</span>
+              <span class="stack-chip">Tkinter GUI</span>
+              <span class="stack-chip">3NF Architecture</span>
+              <span class="stack-chip">Query Tuning</span>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-item-card">
+            <div class="project-top-row">
+              <div class="project-meta">
+                <span class="proj-badge-gold">FINANCIAL BACKEND</span>
+                <span class="proj-date">2024</span>
+              </div>
+              <a href="https://github.com/preetham1921" target="_blank" rel="noopener noreferrer" class="proj-source-link" title="View Source on GitHub">
+                <span>GitHub Source</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+
+            <h3 class="proj-title">Smart Expense Tracker — Financial Management System</h3>
+            <p class="proj-desc">
+              Full-featured expense management and budgeting platform handling categorizations, budget thresholds, and spending velocity warnings.
+            </p>
+
+            <ul class="proj-bullet-list">
+              <li>Designed monthly spending aggregation pipelines with automated warning flags when expense thresholds near budget limits.</li>
+              <li>Implemented polyglot backend layers in Java and Python for relational consistency and data integrity.</li>
+            </ul>
+
+            <div class="proj-stack-row">
+              <span class="stack-chip">Java</span>
+              <span class="stack-chip">Python</span>
+              <span class="stack-chip">SQL</span>
+              <span class="stack-chip">Data Modeling</span>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-item-card">
+            <div class="project-top-row">
+              <div class="project-meta">
+                <span class="proj-badge-gold">CORE OOP ENGINEERING</span>
+                <span class="proj-date">2024</span>
+              </div>
+              <a href="https://github.com/preetham1921" target="_blank" rel="noopener noreferrer" class="proj-source-link" title="View Source on GitHub">
+                <span>GitHub Source</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+
+            <h3 class="proj-title">MiniCalc — Modular Console Calculator</h3>
+            <p class="proj-desc">
+              High-precision arithmetic expression parser written in Java with clean object-oriented design and rigorous exception management.
+            </p>
+
+            <ul class="proj-bullet-list">
+              <li>Built tokenization and operator precedence algorithms supporting multi-operator continuous evaluations.</li>
+              <li>Implemented comprehensive custom exception handling preventing crashes on divide-by-zero and boundary inputs.</li>
+            </ul>
+
+            <div class="proj-stack-row">
+              <span class="stack-chip">Java</span>
+              <span class="stack-chip">OOP Design</span>
+              <span class="stack-chip">Exception Propagation</span>
+              <span class="stack-chip">CLI</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ======================================================
+           5. PROBLEM SOLVING & COMPETITIVE CODING
+           ====================================================== -->
+      <section class="content-section" id="problem-solving">
+        <div class="section-title-wrap">
+          <div class="eyebrow-tag">
+            <span class="gold-dash"></span>
+            <span>ALGORITHMIC RIGOR</span>
+          </div>
+          <h2 class="section-heading">Problem Solving & Coding Showcase</h2>
+          <p class="section-subtext">
+            Strong algorithmic foundation tested across competitive platforms with proven capability in analyzing complexity and writing clean, optimal code.
+          </p>
+        </div>
+
+        <div class="coding-showcase-box">
+          <div class="coding-spotlight">
+            <div class="stat-number-giant">200+</div>
+            <h3 class="spotlight-title">LeetCode Problems Solved</h3>
+            <p class="spotlight-desc">
+              Consistent focus on time and space optimal implementations across classical and advanced interview coding patterns.
+            </p>
+
+            <div class="platform-links-row">
+              <a href="https://leetcode.com/u/sanjay139/" target="_blank" rel="noopener noreferrer" class="platform-link-chip">
+                <span class="dot-gold"></span>
+                <span>CodeChef (quasi_rats_63)</span>
+              </a>
+              <a href="https://www.hackerrank.com/profile/sanjayshekar139" target="_blank" rel="noopener noreferrer" class="platform-link-chip">
+                <span class="dot-gold"></span>
+                <span>HackerRank</span>
+              </a>
+              <a href="http://codechef.com/users/sanjay_123_s" target="_blank" rel="noopener noreferrer" class="platform-link-chip">
+                <span class="dot-gold"></span>
+                <span>CodeChef</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="coding-topics-wrap">
+            <div class="topic-chip">
+              <span class="topic-check">✓</span>
+              <span>Arrays & Two Pointers</span>
+            </div>
+            <div class="topic-chip">
+              <span class="topic-check">✓</span>
+              <span>Strings & Sliding Window</span>
+            </div>
+            <div class="topic-chip">
+              <span class="topic-check">✓</span>
+              <span>Linked Lists & Fast/Slow Pointers</span>
+            </div>
+            <div class="topic-chip">
+              <span class="topic-check">✓</span>
+              <span>Binary Trees & BST Traversals</span>
+            </div>
+            <div class="topic-chip">
+              <span class="topic-check">✓</span>
+              <span>Hashing & Hash Map Algorithms</span>
+            </div>
+            <div class="topic-chip">
+              <span class="topic-check">✓</span>
+              <span>Recursion & Backtracking</span>
+            </div>
+            <div class="topic-chip">
+              <span class="topic-check">✓</span>
+              <span>Dynamic Programming (1D & 2D)</span>
+            </div>
+            <div class="topic-chip">
+              <span class="topic-check">✓</span>
+              <span>Binary Search on Answer Range</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           6. CERTIFICATIONS & HONORS
+           ====================================================== -->
+      <section class="content-section" id="certifications">
+        <div class="section-title-wrap">
+          <div class="eyebrow-tag">
+            <span class="gold-dash"></span>
+            <span>CREDENTIALS</span>
+          </div>
+          <h2 class="section-heading">Certifications & Honors</h2>
+          <p class="section-subtext">
+            Verified technical credentials and certifications awarded by premier global software corporations and national engineering bodies.
+          </p>
+        </div>
+
+        <div class="certs-vertical-grid">
+
+          <!-- Cert 1 -->
+          <div class="cert-item-card">
+            <div class="cert-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            </div>
+            <div class="cert-text-wrap">
+              <span class="cert-issuer">ORACLE ACADEMY</span>
+              <h3 class="cert-name">Applied Database Systems 23ai</h3>
+              <p class="cert-summary">
+                Certified in enterprise relational database modeling, AI vector search, schema architecture, and SQL query tuning on Oracle Database 23ai.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="cert-item-card">
+            <div class="cert-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <div class="cert-text-wrap">
+              <span class="cert-issuer">NPTEL • MINISTRY OF EDUCATION, GOVT OF INDIA</span>
+              <h3 class="cert-name">Computer Networks (Passed)</h3>
+              <p class="cert-summary">
+                Rigorous multi-week university examination covering TCP/IP protocol suite, routing protocols, flow control, and network layer architecture.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="cert-item-card">
+            <div class="cert-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+            </div>
+            <div class="cert-text-wrap">
+              <span class="cert-issuer">CISCO NETWORKING ACADEMY</span>
+              <h3 class="cert-name">Python Essentials</h3>
+              <p class="cert-summary">
+                Proficiency in Python programming fundamentals, functional data handling, object orientation, and scripting for automation.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cert 4 -->
+          <div class="cert-item-card">
+            <div class="cert-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            </div>
+            <div class="cert-text-wrap">
+              <span class="cert-issuer">RED HAT ACADEMY</span>
+              <h3 class="cert-name">Python Programming (AD141)</h3>
+              <p class="cert-summary">
+                Enterprise application engineering and systems scripting in enterprise Linux (RHEL) environments with Python.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      
+        <!-- Interactive 3D Gallery Callout Banner -->
+        <div class="interactive-cert-banner">
+          <div class="cert-banner-glow"></div>
+          <div class="cert-banner-content">
+            <div class="cert-banner-tag">
+              <span class="pulse-spark">✨</span>
+              <span>INTERACTIVE EXPERIENCE</span>
+            </div>
+            <h3 class="cert-banner-title">Interactive Certifications Deck</h3>
+            <p class="cert-banner-desc">
+              Experience the 3D card-dealing physics, dynamic curved FLIP logo flight trajectory, and high-resolution lightbox inspection for all 7 verified credentials.
+            </p>
+            <div class="cert-banner-actions">
+              <a href="certifications.html" class="cert-banner-btn">
+                <span>Launch Interactive Deck</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+            </div>
+          </div>
+          <div class="cert-banner-mini-deck" aria-hidden="true">
+            <div class="mini-deck-card mini-card-3"></div>
+            <div class="mini-deck-card mini-card-2"></div>
+            <div class="mini-deck-card mini-card-1">
+              <span class="mini-deck-logo">PN</span>
+              <span class="mini-deck-title">7 CERTS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           7. CONTACT & CONNECT
+           ====================================================== -->
+      <section class="content-section" id="contact">
+        <div class="section-title-wrap">
+          <div class="eyebrow-tag">
+            <span class="gold-dash"></span>
+            <span>REACH OUT</span>
+          </div>
+          <h2 class="section-heading">Let's Connect & Collaborate</h2>
+          <p class="section-subtext">
+            Whether you have an internship opportunity, an AI engineering challenge, or want to discuss LLM architecture, I am eager to connect.
+          </p>
+        </div>
+
+        <div class="contact-card-split">
+          <!-- Left Info Column -->
+          <div class="contact-info-block">
+            <h3 class="contact-prompt">Let's build something remarkable.</h3>
+            <p class="contact-pitch">
+              I am actively seeking software engineering internships, AI research roles, and collaborative projects in Bengaluru or remote.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-row-item">
+                <div class="contact-icon-bubble">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <span class="contact-meta-label">LOCATION</span>
+                  <span class="contact-meta-val">Bengaluru, Karnataka, India</span>
+                </div>
+              </div>
+
+              <div class="contact-row-item">
+                <div class="contact-icon-bubble">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <span class="contact-meta-label">PHONE / WHATSAPP</span>
+                  <a href="tel:+918197623197" class="contact-meta-val link">+91 8197623197</a>
+                </div>
+              </div>
+
+              <div class="contact-row-item">
+                <div class="contact-icon-bubble">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <span class="contact-meta-label">EMAIL ADDRESS</span>
+                  <a href="mailto:pp6777032@gmail.com" class="contact-meta-val link">pp6777032@gmail.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Form Column -->
+          <form class="contact-form-block" id="contactForm">
+            <div class="form-row-group">
+              <label for="userName">YOUR NAME</label>
+              <input type="text" id="userName" class="custom-input" placeholder="e.g. Alex Johnson" required>
+            </div>
+            <div class="form-row-group">
+              <label for="userEmail">EMAIL ADDRESS</label>
+              <input type="email" id="userEmail" class="custom-input" placeholder="alex@company.com" required>
+            </div>
+            <div class="form-row-group">
+              <label for="userSubject">SUBJECT / OPPORTUNITY</label>
+              <input type="text" id="userSubject" class="custom-input" placeholder="Internship Opportunity / Project Inquiry" required>
+            </div>
+            <div class="form-row-group">
+              <label for="userMessage">MESSAGE</label>
+              <textarea id="userMessage" class="custom-textarea" placeholder="Hello Sanjay, I came across your portfolio and would love to discuss..." required></textarea>
+            </div>
+            <button type="submit" class="submit-action-btn">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ======================================================
+           FOOTER
+           ====================================================== -->
+      <footer class="vertical-footer">
+        <div class="footer-left">
+          <span>© 2026 <strong>Preetham N</strong>. Built with precision and dual-split architecture.</span>
+        </div>
+        <div class="footer-right">
+          <a href="#hero" class="back-to-top-btn">
+            <span>Back to top</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+          </a>
+        </div>
+      </footer>
+
+    </main>
+  </div>
 
   <!-- ==========================================================
        RESUME PREVIEW MODAL
@@ -1153,30 +1320,75 @@
   <div class="modal-backdrop" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle">
     <div class="resume-modal-dialog">
       <div class="modal-header-bar">
-        <h3 class="modal-title" id="resumeModalTitle">Preetham N — Curriculum Vitae</h3>
+        <h3 class="modal-title" id="resumeModalTitle">Curriculum Vitae — Preetham N</h3>
         <div class="modal-actions">
-          <a href="resume.html" target="_blank" class="nav-link"
-            style="background: var(--accent-gold); color: #000; font-weight: 700; height: 36px; padding: 0 16px;">
-            Open / Print PDF
+          <a href="resume.html" target="_blank" class="modal-print-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <span>Open & Print PDF</span>
           </a>
-          <button class="drawer-close-btn" id="closeResumeModalBtn" aria-label="Close Resume Modal">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
+          <button class="modal-close-btn" id="closeResumeModalBtn" aria-label="Close modal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           </button>
         </div>
       </div>
       <div class="modal-iframe-container">
-        <iframe src="resume.html" title="Resume Document Preview"></iframe>
+        <iframe src="resume.html" title="Preetham N Resume Document"></iframe>
       </div>
     </div>
   </div>
 
+  <!-- ==========================================================
+       QUICK NAVIGATION DRAWER (Slide Out for Mobile / Quick Access)
+       ========================================================== -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="quick-drawer" id="sideDrawer" aria-label="Quick Mobile Navigation">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <span class="drawer-name">Preetham N</span>
+        <span class="drawer-sub">B.E. AI & ML • Bengaluru</span>
+      </div>
+      <button class="modal-close-btn" id="drawerCloseBtn" aria-label="Close Drawer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <!-- Layout Switcher inside drawer -->
+    <div class="drawer-toggle-row">
+      <button class="control-pill-btn full-width" id="drawerLayoutFlipBtn">
+        <svg class="icon-swap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+        </svg>
+        <span>Toggle Layout: Sidebar Left / Right</span>
+      </button>
+    </div>
+
+    <ul class="drawer-nav-list">
+      <li><a href="#hero" class="drawer-link">01. Overview <span>→</span></a></li>
+      <li><a href="#career-roadmap" class="drawer-link">02. Academies & Roadmap <span>→</span></a></li>
+      <li><a href="#timeline-journey" class="drawer-link">03. Timeline & Education <span>→</span></a></li>
+      <li><a href="#skills" class="drawer-link">04. Technical Matrix <span>→</span></a></li>
+      <li><a href="#projects" class="drawer-link">05. Featured Projects <span>→</span></a></li>
+      <li><a href="#problem-solving" class="drawer-link">06. Problem Solving (200+) <span>→</span></a></li>
+      <li><a href="#certifications" class="drawer-link">07. Certifications <span>→</span></a></li>
+      <li><a href="#contact" class="drawer-link">08. Contact & Connect <span>→</span></a></li>
+    </ul>
+
+    <div class="drawer-footer">
+      <a href="resume.html" class="sidebar-cta-btn trigger-resume-modal full-width">
+        <span class="cta-circle-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </span>
+        <span class="cta-text">Download Profile PDF</span>
+      </a>
+      <div class="drawer-foot-text">
+        CGPA 8.6 • 200+ LeetCode • Bengaluru
+      </div>
+    </div>
+  </aside>
+
   <!-- Toast Notification element -->
-  <div class="toast-msg" id="toastMsg" role="alert"></div>
+  <div class="toast-notification" id="toastMsg" role="alert"></div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
